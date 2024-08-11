@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,64 +19,171 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="https://krishnaraj12.github.io/project/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="https://krishnaraj12.github.io/project/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://krishnaraj12.github.io/project/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="https://krishnaraj12.github.io/project/css/style.css" rel="stylesheet">
     </head>
 
+
+    <style>
+        
+        /* Importing fonts from Google */
+    
+    /* Resetting */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to bottom, #000428, #004683);
+    }
+    
+    .wrapper {
+        margin-top: 100px;
+    }
+    
+    .wrapper .grid .container-lg-4 {
+        display: flex;
+        justify-content: center;
+    }
+    .hero-header, .page-header {
+        margin-top: 101px !important;
+    }
+
+    .profile-card {
+        position: relative;
+        padding: 0;
+        margin: 0 !important;
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 280px;
+        max-height: 340px;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .profile-card .profile-image {
+        width: 100%;
+        max-height: 340px;
+    }
+    
+    .profile-card .profile-image img {
+        width: 100%;
+        max-height: 340px;
+        object-fit: cover;
+    }
+    
+    .profile-card .profile-content {
+        position: absolute;
+        bottom: -180px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        min-height: 140px;
+        width: 100%;
+        transition: bottom .4s ease-in;
+        box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .profile-card:hover .profile-content {
+        bottom: 0px;
+    }
+    
+    .profile-card:hover .profile-content h4,
+    .profile-card:hover .profile-content h5 {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+    
+    .profile-card .profile-content h4,
+    .profile-card .profile-content h5 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-align: center;
+        transition: 0.8s;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(-40px);
+        transition-delay: 0.2s;
+    }
+    
+    .profile-card .profile-content h5 {
+        transition: 0.5s;
+        font-weight: 200;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .profile-card .profile-content .social-links {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .profile-card .profile-content .social-links li {
+        margin: 10px;
+        transition: 0.5s;
+        transition-delay: calc(0.15s * var(--i));
+        transform: translateY(50px);
+    }
+    
+    .profile-card:hover .profile-content .social-links li {
+        transform: translateY(20px);
+    }
+    
+    .profile-card .profile-content .social-links li a {
+        color: #fff;
+    }
+    
+    .profile-card .profile-content .social-links li a span {
+        font-size: 1.3rem;
+    }
+    
+    @media(max-width: 991.5px) {
+        .wrapper {
+            margin-top: 20px;
+        }
+    
+        .wrapper .grid .container-lg-4 {
+            margin: 20px 0px;
+        }
+    }
+    
+    </style>
     <body>
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
 
+      
 
         <!-- Navbar start -->
-        <div class="container-fluid fixed-top">
-            <div class="container topbar bg-primary d-none d-lg-block">
-                <div class="d-flex justify-content-between">
-                    <div class="top-info ps-2">
-                        <!-- <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
-                        <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small> -->
-                    </div>
-                    <div class="top-link pe-2">
-                        <!-- <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a> -->
-                    </div>
-                </div>
-            </div>
-            <div class="container px-0">
-                <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Fruitables</h1></a>
-                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars text-primary"></span>
-                    </button>
-                    <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto">
-                            <!-- <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Shop</a>
-                            <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a> -->
-                          
-                                </div>
-                            </div>
-                          
-                        </div>
-                       
-                    </div>
+        <div class="container-fluid fixed-top" style="position: absolute; top: 0; left: 0; width: 100%; display: flex; justify-content: center; z-index: 1030;">
+            <div class="container px-0" style="display: flex; justify-content: center; width: 100%;">
+                <nav class="navbar navbar-light bg-white navbar-expand-lg" style="width: auto; display: flex; align-items: center; justify-content: center;">
+                    <a href="index.html" class="navbar-brand" style="display: flex; align-items: center; text-decoration: none;">
+                        <img src="https://scontent.fccu31-2.fna.fbcdn.net/v/t39.30808-1/307093949_579303160655669_8065056452430938796_n.jpg?stp=dst-jpg_s200x200&_nc_cat=111&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=GoL_WwFK4YkQ7kNvgHPgNPU&_nc_ht=scontent.fccu31-2.fna&oh=00_AYCvRNlwlrXe9kql_TYzlJ8rdiyJz4x3QM5HymvTpwY2FQ&oe=66BD027E" alt="College Logo" style="width: 70px; height: 70px; margin-right: 15px;">
+                        <h1 class="text-primary display-6" style="margin: 0; font-size: 1.5rem;">Bakhtiyarpur College Of Engineering Patna</h1>
+                    </a>
                 </nav>
             </div>
         </div>
+        
+        
+        
+        
         <!-- Navbar End -->
-
 
         <!-- Modal Search Start -->
         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -97,290 +205,67 @@
         <!-- Modal Search End -->
 
 
-        <!-- Hero Start -->
         <div class="container-fluid py-5 mb-5 hero-header">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-md-12 col-lg-7">
-                        <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                        <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
-                        <div class="position-relative mx-auto">
-                            <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
-                            <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
-                        </div>
+                        <h4 class="mb-3 text-secondary">Sign language</h4>
+                        <h1 class="mb-5 display-3 text-primary">Sign language</h1>
+                        <!-- Add image here -->
+                        <img src="https://raw.githubusercontent.com/SohamPrajapati/sign-language-detector-flask-python/master/hand-signs-of-the-ASL-Language.png" 
+                             alt="Sign Language" 
+                             class="img-fluid" 
+                             style="width: 750px; height: 393px; object-fit: cover; border: 5px solid #000;">
                     </div>
                     <div class="col-md-12 col-lg-5">
                         <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active rounded">
-                                    <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
-                                    <!-- <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a> -->
+                                    <img src="{{ url_for('video_feed') }}" 
+                                         class="img-fluid w-100 h-100 bg-secondary rounded" 
+                                         alt="First slide" 
+                                         style="width: 100%; height: 100%; border-radius: 10px; border: 2px solid #000;">
                                 </div>
-                              
+                                <!-- Add more carousel items if needed -->
                             </div>
-                         
-                           
+                            <!-- Add carousel controls if needed -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Hero End -->
-<style>
-    .card {
-  --main-color: #323232;
-  --sub-color: #5b5b5b;
-  --bg-color: #c7c7c7;
-  --accent-color: #242C88;
-  position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  width: 270px;
-  padding: 25px;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background-color: var(--bg-color);
-  transition: all 0.2s;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px -1.5px #000;
-}
+        
+        
 
-.card::before {
-  content: '';
-  width: 99%;
-  height: 99%;
-  background: var(--sub-color);
-  position: absolute;
-  z-index: -1;
-  top: 1px;
-  left: 1px;
-  border-radius: 25px;
-  transition: all 0.3s;
-}
-
-.card__wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card__img {
-  width: 100%;
-}
-
-.card__title {
-  color: var(--main-color);
-  font-weight: 900;
-  font-size: 25px;
-}
-
-.card__subtitle {
-  color: var(--sub-color);
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.card__icon {
-  width: 40px;
-  height: 40px;
-  transform: rotate(-45deg);
-  transition: all 0.3s;
-}
-
-.card__icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.card__icon g {
-  fill: var(--main-color);
-}
-
-.card__icon circle, polyline, line {
-  stroke: var(--main-color);
-}
-
-.card:hover .card__icon {
-  transform: rotate(0);
-}
-
-.card:hover .card__icon circle, .card:hover .card__icon polyline, .card:hover .card__icon line {
-  stroke: var(--accent-color);
-}
-
-.card:hover .card__icon g {
-  fill: var(--accent-color);
-}
-
-.card:hover {
-  box-shadow: 0px 0px 20px -5px #000;
-}
-
-.card:hover::before {
-  transform: rotate(10deg);
-  box-shadow: 0px 0px 20px -5px #000;
-}
-
-/* remove svg from class ="card__img" and last styles below css code before use */
-.st1 {
-  fill: #fff
-}
-
-.st2 {
-  fill: none;
-  stroke: #242c88;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10
-}
-
-.st7 {
-  fill: #589fff
-}
-
-.st9 {
-  fill: #bc8d66
-}
-
-.st15,.st16 {
-  opacity: .4;
-  fill: #242c88
-}
-
-.st16 {
-  opacity: .2
-}
-
-.st18 {
-  fill: #ffc408
-}
-
-.st53 {
-  fill: none;
-  stroke: #242c88;
-  stroke-width: 1.848;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10
-}
-</style>
 
                 <!-- Vesitable Shop Start-->
-                <div class="container-fluid vesitable py-5">
-                    <div class="container py-5">
-                        <h1 class="mb-0">Fresh Organic Vegetables</h1>
-                        <div class="owl-carousel vegetable-carousel justify-content-center">
-                          <!-- add start  -->
-                           
-                        
-                           <!-- add end -->
-                            <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
+                <div class="container-fluid vesitable py-5" style="    display: flex;
+    justify-content: center;">
+                  
+                      
+                   <div class="col-lx-6 col-lg-3">
+                        <div class="featurs-item text-center rounded bg-light p-4">
+                            <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                               <img src="https://raw.githubusercontent.com/krishnaraj12/project/main/img/avatar.jpg" alt="" style="width: 200; height: 200px;">
                             </div>
-                            <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top bg-light" alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Banana</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
-                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
+                            <div class="featurs-content text-center">
+                                <br><BR>
+                                <h5>DR. SHASHI RAJ</h5>
+                               
                             </div>
-                            <div class="border border-primary rounded position-relative profile-card">
-                                <div class="profile-img">
-                                    <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top" alt="Profile Picture">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">User</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>John Doe</h4>
-                                    <p>Web Developer with expertise in HTML, CSS, JavaScript, and more.</p>
-                                    <div class="d-flex justify-content-between">
-                                        <p class="text-dark fs-5 fw-bold mb-0">Location: New York</p>
-                                        <a href="#" class="btn btn-outline-secondary rounded-pill px-3 text-primary">
-                                            <i class="fa fa-envelope me-2"></i> Contact
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Potatoes</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
-                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
-                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Potatoes</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
-                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border border-primary rounded position-relative vesitable-item">
-                                <div class="vesitable-img">
-                                    <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                </div>
-                                <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
-                                <div class="p-4 rounded-bottom">
-                                    <h4>Parsely</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
-                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
+                
                 <!-- Vesitable Shop End -->
 
 
@@ -391,47 +276,50 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="featurs-item text-center rounded bg-light p-4">
                             <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                               <img src="img/baner-1.png" alt="" style="width: 200; height: 200px;">
+                               <img src="https://raw.githubusercontent.com/krishnaraj12/project/main/img/krishna.png" alt="" style="width: 200; height: 200px;">
                             </div>
                             <div class="featurs-content text-center">
-                                <h5>Free Shipping</h5>
-                                <p class="mb-0">Free on order over $300</p>
+                                <h5>KRISHNA RAJ</h5>
+                                <!-- <p class="mb-0">Free on order over $300</p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="featurs-item text-center rounded bg-light p-4">
                             <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fas fa-user-shield fa-3x text-white"></i>
+                               <img src="https://raw.githubusercontent.com/krishnaraj12/project/main/img/ujjwal.png" alt="" style="width: 200; height: 200px;">
                             </div>
                             <div class="featurs-content text-center">
-                                <h5>Security Payment</h5>
-                                <p class="mb-0">100% security payment</p>
+                                <h5>UJJWAL RAJ</h5>
+                                <!-- <p class="mb-0">Free on order over $300</p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="featurs-item text-center rounded bg-light p-4">
                             <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                               <img src="https://raw.githubusercontent.com/krishnaraj12/project/main/img/puri3.png" alt="" style="width: 200; height: 200px;">
                             </div>
                             <div class="featurs-content text-center">
-                                <h5>30 Day Return</h5>
-                                <p class="mb-0">30 day money guarantee</p>
+                                <h5>Rajnish Puri                      </h5>
+                                <!-- <p class="mb-0">Free on order over $300</p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="featurs-item text-center rounded bg-light p-4">
                             <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fa fa-phone-alt fa-3x text-white"></i>
+                               <img src="https://raw.githubusercontent.com/krishnaraj12/project/main/img/prasa.png" alt="" style="width: 200; height: 200px;">
                             </div>
                             <div class="featurs-content text-center">
-                                <h5>24/7 Support</h5>
-                                <p class="mb-0">Support every time fast</p>
+                                <h5>PRASHANT RAJ</h5>  
+                                <!-- <p class="mb-0">Free on order over $300</p> -->
                             </div>
                         </div>
                     </div>
+                    
+                   
+                  
                 </div>
             </div>
         </div>
@@ -475,11 +363,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://krishnaraj12.github.io/project/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://krishnaraj12.github.io/project/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="https://krishnaraj12.github.io/project/js/main.js"></script>
     </body>
 
 </html>
